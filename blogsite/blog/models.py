@@ -15,6 +15,11 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS,default=0)
     image = models.FileField(upload_to='post_image',blank=True)
+    email = models.TextField(default='')
+    facebook = models.TextField(default='')
+    twitter = models.TextField(default='')
+    instagram = models.TextField(default='')
+
     class Meta:
         ordering = ['-created_on']
     

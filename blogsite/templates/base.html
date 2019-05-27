@@ -6,8 +6,16 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
         <meta name="google" content="notranslate" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous" />
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" /> -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            <!-- Compiled and minified JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -26,22 +34,78 @@
             border-color: #dc281e;
         }
         .masthead {
-            background: #3398E1;
+            background: #3398E1; 
             height: auto;
             padding-bottom: 15px;
             box-shadow: 0 16px 48px #E3E7EB;
             padding-top: 10px;
         }
+        li{
+            margin:10px;
+        }
+        .brand-logo{
+            opacity: 0.2;
+        }
+       
     </style>
 
         <!-- Navigation -->
+
+        <nav style="height: 300px;" class="nav-extended black">
+                <div class="nav-wrapper black">
+                  <a href="/" class="brand-logo"><img style="width:150px;" src="http://nebula.wsimg.com/2d937e78c76fc01f5a7c6d485e43a429?AccessKeyId=4B36C7CD018872565BEC&disposition=0&alloworigin=1" alt=""></a>
+                  <ul class="right hide-on-med-and-down">
+                      <li>Sports</li>
+                      <li>Culture</li>
+                    <li><a href="sass.html"><i class="material-icons left">search</i></a></li>
+                    <li><a href="badges.html"><i class="material-icons right">view_module</i></a></li>
+                  </ul>
+                </div>
+              </nav>
+              <br>
+        
         
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
         <!-- Footer -->
-        <footer class="py-3 bg-black white">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Sports Blog</p>
-        </footer>
+        <footer style="width:100vw; position:absolute; left:0" class="page-footer black">
+                <div class="container">
+                  <div class="row">
+                    <div class="col l6 s12">
+                      <h5 class="white-text">Sports Blog</h5>
+                      <!--<p class="grey-text text-lighten-4">We love python and we are trying our best to spread our love. Follow us on Facebook and Twitter. ;) </p>
+                  -->
+                  <a href='https://play.google.com/store/apps/details?id=com.codeinpython.codeinpython&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                  <img class="responsive-img center" width="220" height="200" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
+                  </a>
+            
+                    </div>
+                    <div class="col l3 s12">
+                      <h5 class="white-text">Site map</h5>
+                      <ul>
+                        <li><a class="white-text" href="#!">About</a></li>
+                        <li><a class="white-text" href="#!">Team</a></li>
+                        <li><a class="white-text" href="#!">App</a></li>
+                      </ul>
+                    </div>
+                    <div class="col l3 s12">
+                      <h5 class="white-text">Connect</h5>
+                      <ul>
+                        <li><a class="white-text" href="#!">Twitter</a></li>
+                        <li><a class="white-text" href="#!">Facebook</a></li>
+                        <li><a class="white-text" href="#!">Instagram</a></li>
+                       
+                       
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-copyright">
+                  <div class="container">
+                  Copyright by <a class="orange-text text-lighten-3" href="http://materializecss.com">Sports Blog</a>
+                  </div>
+                </div>
+              </footer>
     </body>
 </html>

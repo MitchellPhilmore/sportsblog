@@ -1,12 +1,38 @@
 {% extends 'base.html' %} {% block content %}
+<style>
+  .display-1{
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+  }
+  .social{
+    padding:10px;
+  }
+  .content{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  p{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
+</style>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 left  top">
+    <div class="card">
       <div class="card-body">
-        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-        <p class="card-text ">{{ object.content | safe }}</p>
+          <h3 class="display-1">{% block title %} {{ object.title }} {% endblock title %}</h3>
+          <hr style="width:80%">
+          <p class=" text-muted"><img style="height: 70px;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY_kGc624gTC4voAWvn-yDAEln3GGP3vmrrffeB-AuF3ix_0UM" alt=""> By {{ post.author }} | {{ post.created_on }}</p>
+          <a target="blank" href="{{post.facebook}}"><i class="fab fa-facebook social"></i></a>
+          <a target="blank" href="{{post.twitter}}"><i class="fab fa-twitter social"></i></a>
+          <a target="blank" href="{{post.instagram}}"><i class="fab fa-instagram social"></i></a>
+          <a target="blank" href="mailto:{{post.email}}"><i class="fas fa-envelope-square social"></i></a>
+         <img style="width:100%" src="{{object.image.url}}" alt="">
+        <hr>
+       
+        <p style="padding:20px; padding-top:0;" class="card-text flow-text content ">{{ object.content | safe }}</p>
       </div>
     </div>
     {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}

@@ -11,41 +11,78 @@
         color: white;
     }
     
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
+   
+    .icon{
+        width:100%;
+       
     }
-</style>
+    .card{
+        max-height: 80vh
+    }
+  .card-image{
+      height: 300px;
+      overflow: hidden;
+  }
+  .title{
+      font-size:17px;
+       font-weight:bold; 
+       padding: 15px;
+       font-family: 'Roboto Slab', serif;
+  }
+  .title:hover{
+    text-decoration: underline  wavy goldenrod;
+  }
 
-<header class="masthead">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-8 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Sports Blog </h3>
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+  .link{
+      position: relative;
+      left:25%;
+  }
+  .card-text{
+    color: rgba(0,0,0,.45);
+    font-style: italic;
+    font-size: 18px;
+    font-size: 1.125rem;
+
+  }
+    
+     
+</style>
+      <br>
+      <br>
+      <br>
 <div class="container">
     <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
-            {% for post in post_list %}
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">{{ user.post.title }}</h2>
-                    <img src="{{post.image.url}}">
+
+          <!-- Blog Entries Column -->
+          {% for post in post_list %}
+            
+          <div class="col s12 m4">
+            <div class="card hoverable large">
+              <div class="card-image">
+                <img src="{{post.image.url}}">
+                <p class="title">{{post.title}}</p>
+              </div>
+              <div class="card-content">
                     <p class="card-text text-muted h6">{{ post.Author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <p class="card-text">{{post.content|slice:"3:100" }}</p>
+                    <span></span>
                 </div>
+              <div class="card-action">
+                    <a href="{% url 'post_detail' post.slug  %}" class="link"> Read more<i style="padding: 10px;" class="material-icons"> &rarr;</i></a>
+              </div>
             </div>
+          </div>
+        
+
+        
             {% endfor %}
         </div>
+        <hr>
+        <div class="center">
+             <a  href="#">Load More</a>
+        </div>
+        
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
-    </div>
-</div>
+
+
 {%endblock%}
