@@ -21,12 +21,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*4-g90@1z&rf=lq0dqkb^eu$76@27z9q0$x=*zmct0lbv^9$&t'
+# SECRET_KEY = '*4-g90@1z&rf=lq0dqkb^eu$76@27z9q0$x=*zmct0lbv^9$&t'
+import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '*4-g90@1z&rf=lq0dqkb^eu$76@27z9q0$x=*zmct0lbv^9$&t')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG','') != False
 
-ALLOWED_HOSTS = ['msc-sports-blog.herokuapp.com']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -126,11 +128,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'blog/media')
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT,'static')
+    os.path.join(PROJECT_ROOT,'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressManifestStaticFilesStorage'
 
 import dj_database_url
-prod_db = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
