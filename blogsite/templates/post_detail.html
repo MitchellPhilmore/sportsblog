@@ -15,12 +15,12 @@
     font-family: 'Montserrat', sans-serif;
   }
 
-
+  
 </style>
 
 <div class="container">
   <div class="row">
-    <div class="card">
+    <div class="card ">
       <div class="card-body">
           <h3 class="display-1">{% block title %} {{ object.title }} {% endblock title %}</h3>
           <hr style="width:80%">
@@ -35,6 +35,46 @@
         <p style="padding:20px; padding-top:0;" class="card-text flow-text content ">{{ object.content | safe }}</p>
       </div>
     </div>
+    <div class="card mb-4 wow fadeIn">
+
+        <div class="card-header font-weight-bold">
+          <span>About author</span>
+          <span class="pull-right">
+            <a href="">
+              <i class="fab fa-facebook-f mr-2"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-twitter mr-2"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-instagram mr-2"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-linkedin-in mr-2"></i>
+            </a>
+          </span>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+          <div class="media d-block d-md-flex mt-3">
+            <img style="height: 100px; width:100px;" class="d-flex mb-3 mx-auto z-depth-1" src="https://corebank.com/wp-content/uploads/2019/04/perry-circle.jpg"
+              alt="Generic placeholder image" style="width: 100px;">
+            <div class="media-body text-center text-md-left ml-md-3 ml-0">
+              <h5 class="mt-0 font-weight-bold">{{post.author}} </h5>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+              deleniti atque corrupti
+              quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+              similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
+              fuga.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+       
     {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
   </div>
 </div>

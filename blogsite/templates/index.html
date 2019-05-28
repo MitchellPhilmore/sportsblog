@@ -30,7 +30,7 @@
        font-family: 'Roboto Slab', serif;
   }
   .title:hover{
-    text-decoration: underline  wavy goldenrod;
+    color:goldenrod;
   }
 
   .link{
@@ -60,7 +60,7 @@
             <div class="card hoverable large">
               <div class="card-image">
                 <img src="{{post.image.url}}">
-                <p class="title">{{post.title}}</p>
+                <a style="color:black;" href="{% url 'post_detail' post.slug  %}"><p class="title">{{post.title}}</p></a>
               </div>
               <div class="card-content">
                     <p class="card-text text-muted h6">{{ post.Author }} | {{ post.created_on}} </p>

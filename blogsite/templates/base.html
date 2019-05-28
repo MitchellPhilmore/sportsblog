@@ -28,6 +28,10 @@
         .shadow {
             box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
         }
+        a{
+            font-family: 'Roboto Slab', serif;
+        }
+      
         .btn-danger {
             color: #fff;
             background-color: #f00000;
@@ -46,20 +50,33 @@
         .brand-logo{
             opacity: 0.2;
         }
+        a:hover{
+            color: gold;
+
+        }
+        .na:hover{
+            color: #f00000
+        }
        
     </style>
 
         <!-- Navigation -->
 
-        <nav style="height: 300px;" class="nav-extended black">
+        <nav style="height: 460px; position:relative;" class="nav-extended black">
                 <div class="nav-wrapper black">
                   <a href="/" class="brand-logo"><img style="width:150px;" src="http://nebula.wsimg.com/2d937e78c76fc01f5a7c6d485e43a429?AccessKeyId=4B36C7CD018872565BEC&disposition=0&alloworigin=1" alt=""></a>
-                  <ul class="right hide-on-med-and-down">
+                  <!-- <ul class="right hide-on-med-and-down">
                       <li>Sports</li>
                       <li>Culture</li>
                     <li><a href="sass.html"><i class="material-icons left">search</i></a></li>
                     <li><a href="badges.html"><i class="material-icons right">view_module</i></a></li>
-                  </ul>
+                  </ul> -->
+                  <div style="position:relative;top:275px; left:25%" class="nav-links row">
+                        <a style=" margin:5px; font-size: 250%;" class="na col l2 s12" href="">SPORTS</a>
+                        <a style=" margin:5px; font-size: 250%" class="na col l2 s12" href="">CULTURE</a>
+                        <a style=" margin:5px; font-size: 250%" class="na col l2 s12" href="">LAW</a>
+                  </div>
+                 
                 </div>
               </nav>
               <br>
