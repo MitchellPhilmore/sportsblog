@@ -1,1 +1,1 @@
-web: guicorn djangoherokuapp.wsgi --log-file -
+web: guicorn djangoherokuapp.wsgi --log-file 
