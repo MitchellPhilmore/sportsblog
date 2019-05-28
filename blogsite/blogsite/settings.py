@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '*4-g90@1z&rf=lq0dqkb^eu$76@27z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG','') != False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['msc-sports-blog.herokuapp.com','localhost']
 
 
 # Application definition
