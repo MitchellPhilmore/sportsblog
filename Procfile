@@ -1,1 +1,1 @@
-web: gunicorn msc-sports-blog.wsgi --log-file -
+web: gunicorn blogsite.blogsite.wsgi --log-file -
