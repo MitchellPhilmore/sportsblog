@@ -1,1 +1,1 @@
-web: gunicorn djangoherokuapp.wsgi --log-file 
+web: gunicorn msc-sports-blog.wsgi --log-file -
